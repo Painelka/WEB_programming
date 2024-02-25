@@ -11,6 +11,10 @@ services:
       - php
   php:
     image: php:8.3-fpm
+    volumes:
+      - ./code:/code
+
+
 
 
 
