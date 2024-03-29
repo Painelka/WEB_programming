@@ -13,10 +13,16 @@
         <label for="email">Email</label>
         <input type ="email" name="email" required>
         <label for ="category">Category </label>
-        <select name ="category" required>
-            <option value="doll">doll</option>
-            <option value ="other">other</option>
-        </select>
+        <?php
+        $categories = scandir('categories');
+        echo '<select name="category" required>';
+        foreach ($categories as $category) {
+            if ((is_dir("categories/$category")) && ($category != '.') && ($category != '..')) {
+                echo "<option value='$category'>$category</option>";
+            }
+        }
+        echo '</select>';
+        ?>
 
         <br><label for="title">Title</label>
         <input type ="text" name="title" required> <br>
