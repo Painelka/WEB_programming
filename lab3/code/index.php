@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<div id="form">
     <form action ="save.php" method="post">
         <label for="email">Email</label>
         <input type ="email" name="email" required>
@@ -17,13 +18,34 @@
             <option value ="other">other</option>
         </select>
 
-        <label for="title">Title</label>
-        <input type ="text" name="title" required>
+        <br><label for="title">Title</label>
+        <input type ="text" name="title" required> <br>
 
         <label for="description">Description</label>
-        <textarea rows ="6" name="description"> HI! </textarea>
+        <br> <textarea rows ="2" name="description">  </textarea><br>
+
+        <input type ="submit" value = "save">
     </form>
 
+</div>
+
+<div id ="table">
+    <table>
+        <thead>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Description</th>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td> other </td>
+            <td> car </td>
+            <td>   ttdd98o89 </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 
 </body>
