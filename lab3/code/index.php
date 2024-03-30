@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang ="en">
+
+<style type="text/css">
+    thead {
+        background: #e1e1e1;
+    }
+</style>
+
+
 <head>
     <meta charset = "UTF-8">
     <meta name="viewport"
@@ -13,11 +21,14 @@
         <label for="email">Email</label>
         <input type ="email" name="email" required>
         <label for ="category">Category </label>
+
         <?php
         $categories = scandir('categories');
         echo '<select name="category" required>';
         foreach ($categories as $category) {
             if ((is_dir("categories/$category")) && ($category != '.') && ($category != '..')) {
+                // Проверяем, является ли текущий элемент папкой И не является текущей или родительской директорией.
+                // Если это так, то этот элемент добавляется в список категорий для отображения.
                 echo "<option value='$category'>$category</option>";
             }
         }
@@ -36,19 +47,41 @@
 </div>
 
 <div id ="table">
-    <table>
-        <thead>
+    <table border="1" width="400">
+        <thead >
             <th>Category</th>
             <th>Title</th>
             <th>Description</th>
         </thead>
-
         <tbody>
-        <tr>
-            <td> other </td>
-            <td> car </td>
-            <td>   ttdd98o89 </td>
-        </tr>
+        <?php
+        $cat = opendir('categories');
+        while ($file = readdir($cat))
+        {
+            if ((is_dir('categories/'.$file)) && ($file != '.') && ($file != '..'))
+            {
+                $dog = opendir('categories/'.$file);
+                while ($add = readdir($dog))
+                {
+                    if ($add != '.' && $add != '..')
+                    {
+                        $fop = fopen('categories/'.$file.'/'.$add, 'r');
+                        $kov = "";
+                        while ($line = fgets($fop))
+                        {
+                            $kov .= $line;
+                        }
+                        fclose($fop);
+                        echo '<tr>'; // Вывод
+                        echo "<td>$file</td>";
+                        echo "<td>".substr($add, 0, strlen($add) - 2)."</td>";
+                        echo "<td>$kov</td>";
+                        echo '</tr>';
+                    }
+                }
+            }
+        }
+        ?>
         </tbody>
     </table>
 </div>
