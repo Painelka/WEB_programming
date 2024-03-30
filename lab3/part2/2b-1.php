@@ -21,37 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta charset = "UTF-8">
-    <style>
-        body {
-            background: #f6b76e;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        }
-        div body{
-            align-items: center;
-        }
-
-        h2 {
-            background: #fff3e2;
-            vertical-align: middle;
-            text-align: center;
-            border-radius: 7px;
-            padding: 5px;
-        }
-
-        input{
-            background: #fff3e2;
-            vertical-align: middle;
-            text-align: center;
-            font-size: 22px;
-            border-radius: 7px;
-            padding: 5px;
-        }
-
-    </style>
 </head>
 <body>
 
