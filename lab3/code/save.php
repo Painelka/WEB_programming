@@ -1,4 +1,5 @@
 <?php
+
 function redirectToHome(): void
 {
     header( header:'Location: /');
@@ -17,5 +18,8 @@ $filePath ="categories/{$category}/{$title}.txt";
 if (false === file_put_contents($filePath, $description)){
     throw new Exception(message: 'Something went wrong.');
 }
-chmod($filePath, 077);
+chmod($filePath, 0777);
 redirectToHome();
+
+
+
