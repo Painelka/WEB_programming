@@ -1,7 +1,34 @@
 
 <!doctype html>
 <html lang ="en">
+<style>
+    body {
+        background: #f6b76e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    }
+    div body{
+        align-items: center;
+    }
+
+    textarea {
+        vertical-align: middle;
+        text-align: center;
+        background: #e1e1e1;
+        margin: 0;
+    }
+    h2 {
+        background: #fff3e2;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 7px;
+        padding: 5px;
+    }
+
+</style>
 <head>
     <meta charset = "UTF-8">
 
@@ -26,7 +53,7 @@ $count = preg_match_all($regexp, $str, $match);
 ?>
 <p>Количество слов в тексте: <?php echo $count?></p>
 <p>Длина текста: <?php echo mb_strlen($str)?></p>
-?>
+
 
 
 </body>
