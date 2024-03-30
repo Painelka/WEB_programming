@@ -2,9 +2,16 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $_SESSION['surname'] = $_POST['surname']; // изменено last_name
-    $_SESSION['name'] = $_POST['name']; // изменено first_name
-    $_SESSION['age'] = $_POST['age'];
+    $surname = $_POST['surname'];
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+
+    $_SESSION['user_data'] = array(
+        'surname' => $surname,
+        'name' => $name,
+        'age' => $age
+    );
+
     header("Location: task_b.php");
     exit();
 }
@@ -48,20 +55,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<h2> Задание 2B_1 </h2>
+<h2> Задание 2B </h2>
 <div>
-    <form action="task_b.php" method="post">
+    <form method="post">
         <label>
-            Введите Вашу фамилию:
-            <input name="surname" type="text" placeholder="Фамилия">
+            Введите Фамилию:
+            <input name="surname" type="text" placeholder="Моя фамилия">
         </label>
         <label>
-            Введите Ваше имя:
-            <input name="name" type="text" placeholder="Имя">
+            Введите имя:
+            <input name="name" type="text" placeholder="Моё имя">
         </label>
         <label>
-            Введите Ваш возраст:
-            <input name="age" type="text" placeholder="Возраст">
+            Введите возраст:
+            <input name="age" type="text" placeholder="Мой возраст">
         </label>
         <input type="submit">
     </form>
