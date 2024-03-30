@@ -74,7 +74,7 @@
                         fclose($fop);
                         echo '<tr>'; // Вывод
                         echo "<td>$file</td>";
-                        echo "<td>".substr($add, 0, strlen($add) - 2)."</td>";
+                        echo "<td>".substr($add, 0, strlen($add) - 4)."</td>";
                         echo "<td>$kov</td>";
                         echo '</tr>';
                     }
